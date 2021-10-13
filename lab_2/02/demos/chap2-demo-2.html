@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Chap2 Demo Sierpinski Gasket </title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec4 vPosition;
+	void main(){
+		gl_Position = vPosition;
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	void main(){
+		gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+	}
+	</script>
+
+    <script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../js/common/initShaders.js"></script>
+    <script type="text/javascript" src="../js/common/gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="../js/ch02/gasket-triangles.js"></script>
+</head>
+
+<body>
+    <h2>Sierpinski Gasket in 2D</h2>
+	<h4>任务a</h4>
+    <canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+   
+	  <br />
+      <input type="text" id="value" placeholder="在此输入图形层数(0~7)" maxlength="50" align="middle"/><br />
+      <input type="button" value="生成" onclick="get_input_value();initTriangles()" align="middle"><br /> 
+	 <br />
+	 
+	 <h4><a href="../../新建文件夹/demos/b.html">任务b</a></h4>
+	 <h4><a href="../../新建文件夹/demos/c.html">任务c</a></h4>
+	 <h4>任务d</h4>
+	 
+	  <!-- (暂时只能从高阶改为低阶，无法从低阶生成高阶...)
+	 <!-- <select id="controls" size="7">
+	      <option value="0">0</option>
+	      <option value="1">1</option>
+	      <option value="2">2</option>
+	  </select> -->
+</body>
+
+</html>

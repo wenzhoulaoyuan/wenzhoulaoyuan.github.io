@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Chap2 Demo Sierpinski Gasket </title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        attribute vec3 vPosition;
+        attribute vec3 vColor;
+        varying vec4 color;
+    
+        void main(){
+            gl_Position = vec4( vPosition, 1.0 );
+            color = vec4( vColor, 1.0 );
+        }
+        </script>
+    
+        <script id="fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+        varying vec4 color;
+        void main(){
+            gl_FragColor = color;
+        }
+        </script>
+
+    <script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../js/common/initShaders.js"></script>
+    <script type="text/javascript" src="../js/common/gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="../js/ch02/gasket-triangles_c.js"></script>
+</head>
+
+<body>
+    <h2>Sierpinski Gasket in line</h2>
+	<h4>任务c</h4>
+    <canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+	<br />
+	
+	<script>
+		var cav=document.getElementById("myCanvas")
+		var cxt=cav.getContext("2d")
+		 
+		var angle=100;
+		setInterval(function(){
+				// 保存当前环境的状态
+			cxt.save()
+	
+			// 重新映射画布上的 (0,0) 位置
+		cxt.translate(300,300)
+	
+		// 旋转当前绘图
+		cxt.rotate(angle)
+	
+	// 	cxt.beginPath()
+	// 	cxt.fillStyle="#fff"
+	// 	cxt.arc(0,0,200,0,2*Math.PI,false)
+	// 	cxt.fill()
+	// 	cxt.closePath()
+	
+	// 	cxt.beginPath()
+	// 	cxt.arc(0,0,200,0.5*Math.PI,1.5*Math.PI,false)
+	// 	cxt.fillStyle="#000"
+	// 	cxt.fill()
+	// 	cxt.closePath()
+		
+	// 	cxt.beginPath()
+	// 	cxt.fillStyle="#fff"
+	// 	cxt.arc(0,-100,100,0,2*Math.PI,false)
+	// 	cxt.fill()
+	// 	cxt.closePath()
+		
+	
+	// 	cxt.beginPath()
+	// 	cxt.fillStyle="#000"
+	// 	cxt.arc(0,100,100,0,2*Math.PI,false)
+	// 	cxt.fill()
+	// 	cxt.closePath()
+	
+	// 	cxt.beginPath()
+	// 	cxt.fillStyle="#000"
+	// 	cxt.arc(0,-100,15,0,2*Math.PI,false)
+	// 	cxt.fill()
+	// 	cxt.closePath()
+		
+	// 	cxt.beginPath()
+	// 	cxt.fillStyle="#fff"
+	// 	cxt.arc(0,100,15,0,2*Math.PI,false)
+	// 	cxt.fill()
+	// 	cxt.closePath()
+	// 		// 返回之前保存过的路径状态和属性
+	// 	cxt.restore()
+	// 	// 逆时针旋转
+	// 	angle-=0.02
+	// 	// 顺时针
+	// 	// angle+=0.02
+	// 	},15)
+		
+		</script>
+	
+	<input type="text" id="value" placeholder="在此输入图形层数(0~7)" maxlength="50" align="middle"/><br />
+	<input type="button" value="生成" onclick="get_input_value();initTriangles()" align="middle"><br />
+	<h4><a href="../../00/demos/b.html">任务b</a></h4>
+	<h4><a href="../../00/demos/a.html">任务a</a></h4>
+	<h4>任务d</h4>
+	<h4>任务e</h4>
+</body>
+
+</html>
