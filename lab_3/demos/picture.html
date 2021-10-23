@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>First WebGL Demo</title>
+    <!-- 顶点着色器和片元着色器代码 -->
+    <script id="vertex-shader" type="x-shader/x-vertex">
+      attribute vec4 vPosition;
+      void main(){
+        gl_Position = vPosition;
+      }
+    </script>
+    <script id="fragment-shader" type="x-shader/x-fragment">
+      precision mediump float;
+	  uniform vec4 u_color;
+      void main(){
+		   gl_FragColor = u_color;
+        /*gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);*/
+    //     if(gl_FragCoord.y < 500.0){
+				// 	gl_FragColor = vec4(0.067, 0.2, 0.467, 1.0);
+				// }else{
+				// 	gl_FragColor = vec4(0.0, 0.05, 0.26, 1.0);
+				// }
+      }
+
+    </script>
+	 </script>
+    <!-- 一组相关的JS库 -->
+    <script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../js/common/initShaders.js"></script>
+    <script type="text/javascript" src="../js/common/gl-matrix-min.js"></script>
+    <!-- 绘制三角形的JS代码 -->
+    <script type="text/javascript" src="../js/ch03/picture.js"></script>
+  </head>
+  <body>
+	  <h1>《海上明月》</h1>
+	  <h3>交互效果：单击天空绘制星星</h3>
+    <canvas id="canvas" style="border:none;" width="500" height="800"></canvas>
+	 
+  </body>
+</html>
