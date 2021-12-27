@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>方块仿生人</title>
+		<link rel="stylesheet" href="css.css" type="text/css" />
+		<script type="text/javascript" src="three.js"></script>
+		<script type="text/javascript" src="OrbitControls.js"></script>
+		<script type="text/javascript" src="dat.gui.min.js"></script>
+		<script type="text/javascript" src="js.js"></script>
+	</head>
+
+	<body>
+		<div id="world">
+			<a>Camara.x:</a><input type="range" id="cameraX" value="50" min="-50" max="100" step="1" onchange="setCameraZ(this)"/>
+			<a>y:</a><input type="range" id="cameraY" value="50" min="-50" max="100" step="1" onchange="setCameraZ(this)"/>
+			<a>z:</a><input type="range" id="cameraZ" value="100" min="50" max="200" step="1" onchange="setCameraZ(this)"/>
+		<a>legL</a>&nbsp;&nbsp;<input type="color" onchange="colorChange(this)" id="legL" value="#451d09" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<a>legR</a>&nbsp;&nbsp;<input type="color" onchange="colorChange(this)" id="legR" value="#441d09" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<a>handL</a>&nbsp;&nbsp;<input type="color" onchange="colorChange(this)" id="handL" value="#451d09" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<a>handR</a>&nbsp;&nbsp;<input type="color" onchange="colorChange(this)" id="handR" value="#451d09" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<a>torso</a>&nbsp;&nbsp;<input type="color" onchange="colorChange(this)" id="torso" value="#aaffff" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<a>head</a>&nbsp;&nbsp;<input type="color" onchange="colorChange(this)" id="head" value="#abffff" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<a>Speed</a>&nbsp;&nbsp;<input type="range" id="speed" value="0" min="1" max="10" step="0.1" onchange="setSpeed(this)"/>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="文档/网页文档/primarily_report.html">查看文档</a>
+		
+		<br />
+
+		</div>
+		<div class="nav">
+			<div class="previous link step"><a href="#">← previous step</a></div>
+			<div class="marker step">0/10</div>
+			<div class="next link step"><a href="#">next step →</a></div>
+		</div>
+
+
+	</body>
+</html>
